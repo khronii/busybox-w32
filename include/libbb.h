@@ -2360,7 +2360,7 @@ extern struct globals *BB_GLOBAL_CONST ptr_to_globals;
 
 #define barrier() asm volatile ("":::"memory")
 
-#if defined(__clang_major__) && __clang_major__ >= 9
+#if 1
 /* Clang/llvm drops assignment to "constant" storage. Silently.
  * Needs serious convincing to not eliminate the store.
  */
