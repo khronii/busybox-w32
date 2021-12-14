@@ -2232,7 +2232,7 @@ int gzip_main(int argc UNUSED_PARAM, char **argv)
 	opt >>= (BBUNPK_OPTSTRLEN IF_FEATURE_GZIP_DECOMPRESS(+ 2) + 1); /* drop cfkvq[dt]n bits */
 	if (opt == 0)
 		opt = 1 << 5; /* default: 6 */
-	opt = ffs(opt >> 4); /* Maps -1..-4 to [0], -5 to [1] ... -9 to [5] */
+	opt = __builtin_ffs(opt >> 4); /* Maps -1..-4 to [0], -5 to [1] ... -9 to [5] */
 
 	comp_level_minus4 = opt;
 
