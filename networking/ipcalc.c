@@ -51,7 +51,9 @@
 
 #include "libbb.h"
 /* After libbb.h, because on some systems it needs other includes */
+#if !ENABLE_PLATFORM_MINGW32
 #include <arpa/inet.h>
+#endif
 
 #define CLASS_A_NETMASK ntohl(0xFF000000)
 #define CLASS_B_NETMASK ntohl(0xFFFF0000)

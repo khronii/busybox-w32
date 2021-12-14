@@ -225,7 +225,9 @@
 #endif
 
 #include <fnmatch.h>
+#if !ENABLE_PLATFORM_MINGW32
 #include <sys/times.h>
+#endif
 #include <sys/utsname.h> /* for setting $HOSTNAME */
 #include "busybox.h" /* for applet_names */
 #if ENABLE_FEATURE_SH_EMBEDDED_SCRIPTS

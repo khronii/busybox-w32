@@ -7,12 +7,14 @@
  * Licensed under GPLv2, see file LICENSE in this source tree.
  */
 #include <sys/types.h>
+#if !ENABLE_PLATFORM_MINGW32
 #include <sys/socket.h> /* netinet/in.h needs it */
 #include <netinet/in.h>
 #include <net/if.h>
 #include <sys/un.h>
 #if ENABLE_IFPLUGD || ENABLE_FEATURE_MDEV_DAEMON || ENABLE_UEVENT
 # include <linux/netlink.h>
+#endif
 #endif
 #include "libbb.h"
 

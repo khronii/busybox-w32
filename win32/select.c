@@ -21,7 +21,9 @@
 #include "libbb.h"
 
 /* Specification.  */
+#if !ENABLE_PLATFORM_MINGW32
 #include <sys/select.h>
+#endif
 
 #if defined _WIN32 && ! defined __CYGWIN__
 /* Native Windows.  */

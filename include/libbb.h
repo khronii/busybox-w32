@@ -17,10 +17,14 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <inttypes.h>
+#if !ENABLE_PLATFORM_MINGW32
 #include <netdb.h>
+#endif
 #include <setjmp.h>
 #include <signal.h>
+#if !ENABLE_PLATFORM_MINGW32
 #include <paths.h>
+#endif
 #if defined __UCLIBC__ /* TODO: and glibc? */
 /* use inlined versions of these: */
 # define sigfillset(s)    __sigfillset(s)
@@ -39,22 +43,30 @@
 #undef basename
 #define basename dont_use_basename
 #include <poll.h>
+#if !ENABLE_PLATFORM_MINGW32
 #include <sys/ioctl.h>
 #include <sys/mman.h>
+#endif
 #include <sys/resource.h>
+#if !ENABLE_PLATFORM_MINGW32
 #include <sys/socket.h>
+#endif
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/types.h>
+#if !ENABLE_PLATFORM_MINGW32
 #if !defined(major) || defined(__GLIBC__)
 # include <sys/sysmacros.h>
 #endif
 #include <sys/wait.h>
+#endif
 #include <termios.h>
 #include <time.h>
 #include <sys/param.h>
+#if !ENABLE_PLATFORM_MINGW32
 #include <pwd.h>
 #include <grp.h>
+#endif
 #if ENABLE_FEATURE_SHADOWPASSWDS
 # if !ENABLE_USE_BB_SHADOW
 /* If using busybox's shadow implementation, do not include the shadow.h

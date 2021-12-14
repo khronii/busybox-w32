@@ -73,7 +73,9 @@
 
 #include "libbb.h"
 #include "common_bufsiz.h"
+#if !ENABLE_PLATFORM_MINGW32
 #include <sys/inotify.h>
+#endif
 
 #if !ENABLE_PLATFORM_MINGW32
 static const char mask_names[] ALIGN1 =

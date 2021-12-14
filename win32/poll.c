@@ -46,10 +46,9 @@
 #else
 # include <sys/time.h>
 # include <unistd.h>
+# include <sys/select.h>
+# include <sys/socket.h>
 #endif
-
-#include <sys/select.h>
-#include <sys/socket.h>
 
 #ifdef HAVE_SYS_IOCTL_H
 # include <sys/ioctl.h>
